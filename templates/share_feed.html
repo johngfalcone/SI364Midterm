@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+<form action = "{{ url_for('share_feed') }}" method = "GET">
+
+<h1>Check out shares below!</h1>
+<hr>
+
+<br>
+<br>
+<div>
+	{% for post in posts %}
+	<div>
+		<h1>By {{post.username}} in {{post.city}} </h1>
+		<h2>Shared by {{post.shared_by}} to {{post.shared_to}} </h2>
+		<p> {{post.post_text}} </p>
+		<p> {{post.weather}} </p>
+		<p> Post ID: {{post.id}} </p>
+		
+		<hr>
+		<br>
+	</div>
+	{% endfor %}
+</div>
+
+{% if not posts %}
+    There are no shared posts to show.
+{% endif %}
+
+{% endblock %}

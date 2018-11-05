@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<form action = "{{ url_for('make_post') }}" method = "POST">
+
+<h1>Create a post below!</h1>
+
+<br>
+{{ form.username.label() }} {{ form.username }}
+<br>
+{{ form.text.label() }} {{ form.text }}
+<br>
+{{ form.city.label() }} {{ form.city }}
+<br>
+<br>
+
+{{ form.submit() }}
+{{ form.hidden_tag() }}
+</form>
+
+{% endblock %}

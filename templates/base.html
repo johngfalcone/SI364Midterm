@@ -1,0 +1,18 @@
+{{error}}
+
+{% block content1 %}
+
+<h1>Welcome to the SI 364 Midterm menu! Pick a destination.</h1>
+<p>From here, you can create a post as a user, view posts, share posts between users, and view shares</p>
+
+	<li><a href = "{{ url_for('make_post') }}">Create a post</a></li>
+
+	<li><a href = "{{ url_for('post_feed') }}">Open the post feed</a></li>
+
+	<li><a href = "{{ url_for('make_share') }}">Create a share</a></li>
+
+	<li><a href = "{{ url_for('share_feed') }}">Open the share feed</a></li>
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+
+<h1>Check out posts made by {{user}}!</h1>
+<p>Now only displaying posts submitted by {{user}}</p>
+
+<br>
+<br>
+<div>
+	{% for post in posts %}
+	<div>
+		<h1>By {{post.username}} in {{post.city}} </h1>
+		<p> {{post.post_text}} </p>
+		<p> {{post.weather}} </p>
+		<p> Post ID: {{post.id}} </p>
+		
+		<hr>
+		<br>
+	</div>
+	{% endfor %}
+</div>
+
+{% if not posts %}
+    This user has no posts to show.
+{% endif %}
+
+{% endblock %}
